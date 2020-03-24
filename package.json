@@ -1,0 +1,54 @@
+{
+  "name": "hokodo",
+  "version": "0.0.1",
+  "description": "Hokodo API wrapper",
+  "keywords": [
+    "hokodo",
+    "api"
+  ],
+  "homepage": "https://github.com/chasertech/hokodo-node",
+  "author": "Chaser <engineering@chaserhq.com> (https://chaserhq.com/)",
+  "contributors": [
+    "Pedro Sampaio <pedro.sampaio@chaserhq.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chasertech/hokodo-node.git"
+  },
+  "bugs:": "https://github.com/chasertech/hokodo-node/issues",
+  "engines": {
+    "node": "^8.1 || >=10.*"
+  },
+  "main": "src/client.js",
+  "license": "GNU GPLv3",
+  "scripts": {
+    "clean": "rm -rf ./.nyc_output ./node_modules/.cache ./coverage",
+    "mocha": "nyc mocha 'test/**/*.test.js'",
+    "mocha-only": "mocha 'test/**/*.test.js'",
+    "test": "yarn lint && yarn mocha",
+    "lint": "eslint --ext .js,.jsx,.ts .",
+    "fix": "yarn lint --fix",
+    "report": "nyc -r text -r lcov report"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "singleQuote": true
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "unirest": "^0.6.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-spies": "^1.0.0",
+    "coveralls": "^3.0.11",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.1"
+  }
+}
